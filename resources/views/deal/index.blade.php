@@ -10,9 +10,9 @@
                     <a href="/deal/add">New Deal</a>
                     <table class="table">
                         <tr>
-                            <th></th>
                             <th>tag</th>
                             <th>price</th>
+                            <th></th>
                         </tr>
                         @foreach ($items as $item)
                         <tr>

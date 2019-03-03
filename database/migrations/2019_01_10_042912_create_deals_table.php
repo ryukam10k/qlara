@@ -15,16 +15,16 @@ class CreateDealsTable extends Migration
     {
         Schema::create('deals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('customer_id');
-            $table->integer('deal_category_id');
-            $table->integer('account_id');
-            $table->string('tag');
-            $table->integer('price');
-            $table->integer('number');
-            $table->string('memo');
-            $table->dateTime('reception_date');
-            $table->dateTime('end_date');
-            $table->string('keijo_tsuki');
+            $table->integer('customer_id')->nullable();;
+            $table->integer('deal_category_id')->nullable();;
+            $table->integer('account_id')->nullable();;
+            $table->string('tag')->nullable();;
+            $table->integer('price')->nullable();;
+            $table->integer('number')->nullable();;
+            $table->string('memo')->nullable();;
+            $table->dateTime('reception_date')->nullable();;
+            $table->dateTime('end_date')->nullable();;
+            $table->string('keijo_tsuki')->nullable();;
             $table->timestamps();
         });
     }

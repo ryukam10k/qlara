@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Deals</div>
                 <div class="card-body">
-                    <a href="/tag/add">New Deal</a>
+                    <a href="/deal/add">New Deal</a>
                     <table class="table">
                         <tr>
                             <th></th>

@@ -13,4 +13,19 @@ class DealController extends Controller
         $param = ['items' => $items];
         return view('deal.index', $param);
     }
+
+    public function add(Request $request)
+    {
+        return view('deal.add');
+    }
+
+    public function create(Request $request)
+    {
+        $this->validate($request, Deal::$rules);
+        $deal = new Deal;
+        $form = $request->all();
+        unset($form['_token']);
+        $deal->fill($form)->save();
+        return redirect('/deal');
+    }
 }

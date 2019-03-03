@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /** Deal */
 Route::get('deal', 'DealController@index');
+Route::get('deal/add', 'DealController@add');
+Route::post('deal/add', 'DealController@create');

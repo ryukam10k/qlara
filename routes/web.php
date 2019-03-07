@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('deal', 'DealController@index');
 Route::get('deal/add', 'DealController@add');
 Route::post('deal/add', 'DealController@create');
+
+/**  Customer */
+Route::get('customer', 'CustomerController@index');

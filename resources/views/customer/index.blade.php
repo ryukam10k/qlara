@@ -10,14 +10,16 @@
                     <a href="/customer/add">New Customer</a>
                     <table class="table">
                         <tr>
-                            <th>name</th>
-                            <th>short_name</th>
+                            <th>customer_name</th>
+                            <th>customer_short_name</th>
+                            <th>tax_with_holding_flag</th>
                             <th></th>
                         </tr>
                         @foreach ($items as $item)
                         <tr>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->short_name}}</td>
+                            <td>{{$item->customer_name}}</td>
+                            <td>{{$item->customer_short_name}}</td>
+                            <td>{{$item->tax_with_holding_flag}}</td>
                             <td>
                                 <a href="/customer/show?id={{$item->id}}">show</a> | 
                                 <a href="/customer/edit?id={{$item->id}}">edit</a> | 

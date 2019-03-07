@@ -17,12 +17,12 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('customer_name');
             $table->string('customer_short_name');
-            $table->string('group_name');
-            $table->string('company_name');
-            $table->string('transfer_name');
-            $table->string('memo');
+            $table->string('group_name')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('transfer_name')->nullable();
+            $table->string('memo')->nullable();
             $table->boolean('delete_flag');
-            $table->dateTime('closing_date');
+            $table->integer('closing_date')->nullable();
             $table->boolean('tax_with_holding_flag');
             $table->timestamps();
         });

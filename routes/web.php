@@ -26,3 +26,5 @@ Route::post('deal/add', 'DealController@create');
 
 /**  Customer */
 Route::get('customer', 'CustomerController@index');
+Route::get('customer/add', 'CustomerController@add');
+Route::post('customer/add', 'CustomerController@create');

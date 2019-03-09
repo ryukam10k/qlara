@@ -24,7 +24,12 @@ Route::get('deal', 'DealController@index');
 Route::get('deal/add', 'DealController@add');
 Route::post('deal/add', 'DealController@create');
 
-/**  Customer */
+/** Customer */
 Route::get('customer', 'CustomerController@index');
 Route::get('customer/add', 'CustomerController@add');
 Route::post('customer/add', 'CustomerController@create');
+
+/** DealCategory */
+Route::get('dealcategory', 'DealCategoryController@index');
+Route::get('dealcategory/add', 'DealCategoryController@add');
+Route::post('dealcategory/add', 'DealCategoryController@create');

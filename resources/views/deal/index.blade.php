@@ -10,14 +10,26 @@
                     <a href="/deal/add">New Deal</a>
                     <table class="table">
                         <tr>
-                            <th>tag</th>
-                            <th>price</th>
+                            <th>受付日</th>
+                            <th>取引区分</th>
+                            <th>タグ</th>
+                            <th>取引先</th>
+                            <th>件数</th>
+                            <th>メモ有</th>
+                            <th>完了日時</th>
+                            <th>売上月</th>
                             <th></th>
                         </tr>
                         @foreach ($items as $item)
                         <tr>
+                            <td>{{$item->reception_date}}</td>
+                            <td></td>
                             <td>{{$item->tag}}</td>
-                            <td>{{$item->price}}</td>
+                            <td></td>
+                            <td>{{$item->number}}</td>
+                            <td></td>
+                            <td>{{$item->end_date}}</td>
+                            <td>{{$item->keijo_tsuki}}</td>
                             <td>
                                 <a href="/deal/show?id={{$item->id}}">show</a> | 
                                 <a href="/deal/edit?id={{$item->id}}">edit</a> | 

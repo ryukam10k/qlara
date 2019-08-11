@@ -45,11 +45,9 @@
                             <th>受付日</th>
                             <td><input type="text" class="form-control" name="reception_date" value="{{old('reception_date')}}"></td>
                         </tr>
-                        <tr>
-                            <th></th>
-                            <td><input type="submit" class="btn btn-primary" value="send"></td>
-                        </tr>
                     </table>
+                    <hr>
+                    <div><input type="submit" class="btn btn-primary btn-block" value="保存"></div>
                     </form>
                 </div>
             </div>

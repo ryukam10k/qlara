@@ -5,12 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">Deals</div>
+                <div class="card-header">仕事依頼</div>
                 <div class="card-body">
                     <a href="/deal/add">New Deal</a> |
                     <a href="/jobRequest">仕事を依頼する</a>
                     <table class="table">
                         <tr>
+                            <th>ID</th>
                             <th>受付日</th>
                             <th>取引区分</th>
                             <th>タグ</th>
@@ -23,8 +24,9 @@
                         </tr>
                         @foreach ($items as $item)
                         <tr>
+                            <td><a href="/deal/show?id={{$item->id}}">{{$item->id}}</a></td>
                             <td>{{$item->reception_date}}</td>
-                            <td></td>
+                            <td>{{$item->dealCategory->deal_category_name}}</td>
                             <td>{{$item->tag}}</td>
                             <td></td>
                             <td>{{$item->number}}</td>
@@ -32,7 +34,6 @@
                             <td>{{$item->end_date}}</td>
                             <td>{{$item->keijo_tsuki}}</td>
                             <td>
-                                <a href="/deal/show?id={{$item->id}}">show</a> | 
                                 <a href="/deal/edit?id={{$item->id}}">edit</a> | 
                                 <a href="/deal/del?id={{$item->id}}">del</a>
                             </td>

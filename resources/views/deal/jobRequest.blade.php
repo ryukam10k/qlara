@@ -37,11 +37,9 @@
                             <th>メモ</th>
                             <td><textarea class="form-control" rows="4" name="memo">{{old('memo')}}</textarea></td>
                         </tr>
-                        <tr>
-                            <th></th>
-                            <td><input type="submit" class="btn btn-primary" value="依頼する"></td>
-                        </tr>
                     </table>
+                    <hr>
+                    <div><input type="submit" class="btn btn-primary btn-block" value="依頼する"></div>
                     </form>
                 </div>
             </div>

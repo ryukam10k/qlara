@@ -3,27 +3,25 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-12">
+        <div class="col-lg-8">
             <div class="card">
-                <div class="card-header">DealCategories</div>
+                <div class="card-header">依頼カテゴリー</div>
                 <div class="card-body">
-                    <a href="/dealcategory/add">New Category</a>
+                    <a href="/dealcategory/add">新規登録</a>
                     <table class="table">
                         <tr>
-                            <th>deal_category_name</th>
-                            <th>basic_price</th>
-                            <th>sort_no</th>
+                            <th>依頼カテゴリー</th>
+                            <th>標準価格</th>
+                            <th>表示順</th>
                             <th></th>
                         </tr>
                         @foreach ($items as $item)
                         <tr>
-                            <td>{{$item->deal_category_name}}</td>
+                            <td><a href="/dealcategory/edit?id={{$item->id}}">{{$item->deal_category_name}}</a></td>
                             <td>{{$item->basic_price}}</td>
                             <td>{{$item->sort_no}}</td>
                             <td>
-                                <a href="/dealcategory/show?id={{$item->id}}">show</a> | 
-                                <a href="/dealcategory/edit?id={{$item->id}}">edit</a> | 
-                                <a href="/dealcategory/del?id={{$item->id}}">del</a>
+                                <a href="/dealcategory/del?id={{$item->id}}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         @endforeach

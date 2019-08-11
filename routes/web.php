@@ -36,3 +36,7 @@ Route::post('customer/add', 'CustomerController@create');
 Route::get('dealcategory', 'DealCategoryController@index');
 Route::get('dealcategory/add', 'DealCategoryController@add');
 Route::post('dealcategory/add', 'DealCategoryController@create');
+Route::get('dealcategory/edit', 'DealCategoryController@edit');
+Route::post('dealcategory/edit', 'DealCategoryController@update');
+Route::get('dealcategory/del', 'DealCategoryController@delete');
+Route::post('dealcategory/del', 'DealCategoryController@remove');

@@ -12,6 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/96014391be.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -34,13 +37,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/deal">Deals</a>
+                            <a class="nav-link" href="/deal">仕事依頼</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/customer">Customers</a>
+                            <a class="nav-link" href="/customer">顧客</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/dealcategory">DealCategories</a>
+                            <a class="nav-link" href="/dealcategory">依頼カテゴリー</a>
                         </li>
                     </ul>
 

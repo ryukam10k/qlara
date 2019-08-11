@@ -16,7 +16,7 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="/deal/add" method="post">
+                    <form action="/deal/add" method="post" enctype="multipart/form-data">
                     <table class="table">
                         {{ csrf_field() }}
                         <tr>
@@ -30,8 +30,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>件数</th>
-                            <td><input type="text" class="form-control" name="number" value="{{old('number')}}"></td>
+                            <th>ファイル添付</th>
+                            <td><input type="file" name="file" id="file" multiple></td>
                         </tr>
                         <tr>
                             <th>メモ</th>

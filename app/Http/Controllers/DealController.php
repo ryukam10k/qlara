@@ -27,7 +27,11 @@ class DealController extends Controller
         $deal = new Deal;
         $form = $request->all();
         unset($form['_token']);
+        unset($form['file']);
         $deal->fill($form)->save();
+
+        $request->file('file')->store($deal->id);
+
         return redirect('/deal');
     }
 

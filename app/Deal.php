@@ -11,4 +11,6 @@ class Deal extends Model
     public static $rules = array(
         
     );
+
+    // memo：dealsテーブルの操作はここに書いていく
 }

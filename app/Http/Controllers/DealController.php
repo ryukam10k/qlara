@@ -4,19 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Deal;
+use App\DealCategory;
 
 class DealController extends Controller
 {
     public function index(Request $request)
     {
-        $items = Deal::all();
-        $param = ['items' => $items];
+        $deals = Deal::all();
+        $param = ['items' => $deals];
         return view('deal.index', $param);
     }
 
     public function add(Request $request)
     {
-        return view('deal.add');
+        $dealCategories = DealCategory::findAll();
+        return view('deal.add', ['dealCategories' => $dealCategories]);
     }
 
     public function create(Request $request)
@@ -29,10 +31,17 @@ class DealController extends Controller
         return redirect('/deal');
     }
 
+    public function jobRequest(Request $request)
+    {
+        $dealCategories = DealCategory::findAll();
+        return view('deal.jobRequest', ['dealCategories' => $dealCategories]);
+    }
+
     public function edit(Request $request)
     {
+        $dealCategories = DealCategory::findAll();
         $deal = Deal::find($request->id);
-        return view('deal.edit', ['form' => $deal]);
+        return view('deal.edit', ['form' => $deal], ['dealCategories' => $dealCategories]);
     }
 
     public function update(Request $request)

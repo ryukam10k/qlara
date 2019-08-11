@@ -21,23 +21,37 @@
                     <table class="table">
                         {{ csrf_field() }}
                         <tr>
-                            <th>タグ: </th>
+                            <th>依頼内容</th>
+                            <td>
+                                <select name="deal_category_id" id="dealCategories" class="form-control">
+                                    @foreach($dealCategories as $dealCategory)
+                                    <option value="{{$dealCategory->id}}" @if($form->deal_category_id == $dealCategory->id) selected @endif>{{$dealCategory->deal_category_name}}</option>
+                                    @endforeach
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>タグ</th>
                             <td><input type="text" class="form-control" name="tag" value="{{$form->tag}}"></td>
                         </tr>
                         <tr>
-                            <th>価格: </th>
+                            <th>価格</th>
                             <td><input type="text" class="form-control" name="price" value="{{$form->price}}"></td>
                         </tr>
                         <tr>
-                            <th>件数: </th>
+                            <th>件数</th>
                             <td><input type="text" class="form-control" name="number" value="{{$form->number}}"></td>
                         </tr>
                         <tr>
-                            <th>メモ: </th>
+                            <th>メモ</th>
                             <td><textarea class="form-control" rows="4" name="memo">{{$form->memo}}</textarea></td>
                         </tr>
                         <tr>
-                            <th>受付日: </th>
+                            <th>受付日</th>
+                            <td><input type="text" class="form-control" name="reception_date" value="{{$form->reception_date}}"></td>
+                        </tr>
+                        <tr>
+                            <th>完了日</th>
                             <td><input type="text" class="form-control" name="reception_date" value="{{$form->reception_date}}"></td>
                         </tr>
                         <tr>

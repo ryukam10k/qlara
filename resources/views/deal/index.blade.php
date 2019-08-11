@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header">Deals</div>
                 <div class="card-body">
-                    <a href="/deal/add">New Deal</a>
+                    <a href="/deal/add">New Deal</a> |
+                    <a href="/jobRequest">仕事を依頼する</a>
                     <table class="table">
                         <tr>
                             <th>受付日</th>

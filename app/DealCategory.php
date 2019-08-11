@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class DealCategory extends Model
 {
@@ -11,4 +12,8 @@ class DealCategory extends Model
     public static $rules = array(
         
     );
+
+    public static function findAll() {
+        return DB::table('deal_categories')->orderBy('sort_no')->get();
+    }
 }

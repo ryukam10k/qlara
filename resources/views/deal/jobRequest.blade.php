@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="card">
-                <div class="card-header">Deals - Add</div>
+                <div class="card-header">仕事の依頼</div>
                 <div class="card-body">
                     @if (count($errors) > 0)
                     <div>
@@ -30,10 +30,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>価格</th>
-                            <td><input type="text" class="form-control" name="price" value="{{old('price')}}"></td>
-                        </tr>
-                        <tr>
                             <th>件数</th>
                             <td><input type="text" class="form-control" name="number" value="{{old('number')}}"></td>
                         </tr>
@@ -42,12 +38,8 @@
                             <td><textarea class="form-control" rows="4" name="memo">{{old('memo')}}</textarea></td>
                         </tr>
                         <tr>
-                            <th>受付日</th>
-                            <td><input type="text" class="form-control" name="reception_date" value="{{old('reception_date')}}"></td>
-                        </tr>
-                        <tr>
                             <th></th>
-                            <td><input type="submit" class="btn btn-primary" value="send"></td>
+                            <td><input type="submit" class="btn btn-primary" value="依頼する"></td>
                         </tr>
                     </table>
                     </form>

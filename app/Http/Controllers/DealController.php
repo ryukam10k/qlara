@@ -50,6 +50,7 @@ class DealController extends Controller
 
     public function update(Request $request)
     {
+        //dd($request);
         $this->validate($request, Deal::$rules);
         $deal = Deal::find($request->id);
         $form = $request->all();

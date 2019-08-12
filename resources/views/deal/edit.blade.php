@@ -47,12 +47,12 @@
                             <td><textarea class="form-control" rows="4" name="memo">{{$form->memo}}</textarea></td>
                         </tr>
                         <tr>
-                            <th>受付日</th>
+                            <th>受付日時</th>
                             <td><input type="text" class="form-control" name="reception_date" value="{{$form->reception_date}}"></td>
                         </tr>
                         <tr>
-                            <th>完了日</th>
-                            <td><input type="text" class="form-control" name="reception_date" value="{{$form->reception_date}}"></td>
+                            <th>完了日時</th>
+                            <td><input type="text" class="form-control" name="end_date" value="{{$form->end_date}}"></td>
                         </tr>
                     </table>
                     <hr>

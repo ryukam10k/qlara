@@ -18,6 +18,7 @@
                             <th>件数</th>
                             <th>依頼日時</th>
                             <th>受付日時</th>
+                            <th>ファイル</th>
                             <th></th>
                         </tr>
                         @foreach ($items as $item)
@@ -29,6 +30,7 @@
                             <td>{{$item->number}}</td>
                             <td>{{$item->created_at->format('Y/m/d h:m')}}</td>
                             <td>{{$item->reception_date()}}</td>
+                            <td><a href="/deal/download?id={{$item->id}}">download</a></td>
                             <td>
                                 <a href="/deal/edit?id={{$item->id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
                             </td>

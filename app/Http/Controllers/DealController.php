@@ -30,7 +30,8 @@ class DealController extends Controller
         unset($form['file']);
         $deal->fill($form)->save();
 
-        $request->file('file')->store($deal->id);
+        $file_name = $request->file('file')->getClientOriginalName();
+        $request->file('file')->storeAs($deal->id, $file_name);
 
         return redirect('/deal');
     }
@@ -64,4 +65,15 @@ class DealController extends Controller
         $deal = Deal::find($request->id);
         return view('deal.show', ['form' => $deal]);
     }
+
+    public function download(Request $request){
+        // レスポンス版
+        $headers = ['Content-Type' => 'image/jpeg'];
+        $filename = $request->id . '.jpeg';
+        return response()->download(\Storage::path($request->id . '/' . $request->id . '.jpeg'), $filename, $headers);
+     
+        // ストレージの中なら直接ダウンロードできる
+        //return Storage::download($request->id, $filename, $headers);
+    }
+    
 }

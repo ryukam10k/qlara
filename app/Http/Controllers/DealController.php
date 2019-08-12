@@ -57,4 +57,10 @@ class DealController extends Controller
         $deal->fill($form)->save();
         return redirect('/deal');
     }
+
+    public function show(Request $request)
+    {
+        $deal = Deal::find($request->id);
+        return view('deal.show', ['form' => $deal]);
+    }
 }

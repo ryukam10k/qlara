@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="card">
-                <div class="card-header">Deals - Edit</div>
+                <div class="card-header"><a href="/deal/">仕事依頼</a> > 編集</div>
                 <div class="card-body">
                     @if (count($errors) > 0)
                     <div>

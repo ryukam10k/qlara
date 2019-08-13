@@ -34,10 +34,37 @@
                             <td><input type="file" name="file" id="file" multiple></td>
                         </tr>
                         <tr>
-                            <th>メモ</th>
+                            <th>件数</th>
+                            <td><input type="text" class="form-control" name="number" value="{{old('number')}}"></td>
+                        </tr>
+                        <tr>
+                            <th>納品希望日</th>
+                            <td><input type="text" class="form-control" name="" value=""></td>
+                        </tr>
+                        <tr>
+                            <th>オプション</th>
+                            <td>
+                                <div>
+                                    <input type="checkbox" id="option1" name="option1">
+                                    <label for="option1">装飾品（ピアス等）消し：+10%</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="option2" name="option2">
+                                    <label for="option2">入れ墨消し：+20%</label>  
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="option3" name="option3">
+                                    <label for="option3">その他：金額相談</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>その他希望記入欄</th>
                             <td><textarea class="form-control" rows="4" name="memo">{{old('memo')}}</textarea></td>
                         </tr>
                     </table>
+                    <hr>
+                    見積金額：3,000円
                     <hr>
                     <div><input type="submit" class="btn btn-primary btn-block" value="依頼する"></div>
                     </form>

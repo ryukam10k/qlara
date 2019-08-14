@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!--<script src="{{ asset('js/app.js') }}" defer></script>-->
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/96014391be.js"></script>
@@ -20,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -87,5 +89,14 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <script>
+        $(function () {
+            $.datepicker.setDefaults($.datepicker.regional["ja"]);
+            $("#datepicker").datepicker();
+        });
+    </script>
 </body>
 </html>

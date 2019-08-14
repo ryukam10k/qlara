@@ -7,8 +7,7 @@
             <div class="card">
                 <div class="card-header">仕事依頼</div>
                 <div class="card-body">
-                    <a href="/deal/add">New Deal</a> |
-                    <a href="/jobRequest">仕事を依頼する</a>
+                    <a href="/retouchRequest"><i class="fas fa-plus"></i> 写真加工依頼</a>
                     <table class="table">
                         <tr>
                             <th>ID</th>
@@ -37,9 +36,11 @@
                         </tr>
                         @endforeach
                     </table>
+                    <a href="/deal/add">New Deal</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

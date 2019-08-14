@@ -25,7 +25,7 @@ Route::get('deal/add', 'DealController@add');
 Route::post('deal/add', 'DealController@create');
 Route::get('deal/edit', 'DealController@edit');
 Route::post('deal/edit', 'DealController@update');
-Route::get('jobRequest', 'DealController@jobRequest');
+Route::get('retouchRequest', 'DealController@retouchRequest');
 Route::get('deal/show', 'DealController@show');
 Route::get('deal/download', 'DealController@download');
 

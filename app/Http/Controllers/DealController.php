@@ -36,10 +36,9 @@ class DealController extends Controller
         return redirect('/deal');
     }
 
-    public function jobRequest(Request $request)
+    public function retouchRequest(Request $request)
     {
-        $dealCategories = DealCategory::findAll();
-        return view('deal.jobRequest', ['dealCategories' => $dealCategories]);
+        return view('deal.retouchRequest');
     }
 
     public function edit(Request $request)

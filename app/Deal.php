@@ -36,6 +36,17 @@ class Deal extends Model
         return $basicPrice * $this->number;
     }
 
+    // ステータス
+    public function status() {
+        if ($this->end_date != null) {
+            return "納品済";
+        }
+        if ($this->reception_date != null) {
+            return "作業中";
+        }
+        return "受付待ち";
+    }
+
     public function dealCategory() {
         return  $this->hasOne(DealCategory::class, 'id', 'deal_category_id');
     }

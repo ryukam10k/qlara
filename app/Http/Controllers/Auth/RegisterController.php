@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -55,6 +56,12 @@ class RegisterController extends Controller
         ]);
     }
 
+    // override auth method
+    public function showRegistrationForm() {
+        $customers = Customer::all();
+        return view('auth.register', ['customers' => $customers]);
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -67,6 +74,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'customer_id' => $data['customer_id'],
+            'role_id' => 0
         ]);
     }
 }

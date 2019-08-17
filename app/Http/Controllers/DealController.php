@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Deal;
 use App\DealCategory;
+use Illuminate\Support\Facades\Auth;
 
 class DealController extends Controller
 {
@@ -24,15 +25,21 @@ class DealController extends Controller
 
     public function create(Request $request)
     {
+        //dd(Auth::user());
         $this->validate($request, Deal::$rules);
         $deal = new Deal;
         $form = $request->all();
         unset($form['_token']);
         unset($form['file']);
-        $deal->fill($form)->save();
+        $deal->fill($form);
+        $deal->customer_id = Auth::user()->customer_id;
+        $deal->request_user_id = Auth::user()->id;
+        $deal->save();
 
-        $file_name = $request->file('file')->getClientOriginalName();
-        $request->file('file')->storeAs($deal->id, $file_name);
+        if ($request->file('file') != null) {
+            $file_name = $request->file('file')->getClientOriginalName();
+            $request->file('file')->storeAs($deal->id, $file_name);
+        }
 
         return redirect('/deal');
     }

@@ -18,6 +18,7 @@
                     </div>
                     @endif
                     <form action="/deal/add" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="deal_category_id" value="3" />
                     <table class="table">
                         {{ csrf_field() }}
                         <tr>

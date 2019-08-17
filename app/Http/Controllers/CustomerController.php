@@ -21,11 +21,9 @@ class CustomerController extends Controller
 
     public function create(Request $request)
     {
-        dd($request);
         $this->validate($request, Customer::$rules);
         $customer = new Customer;
         $form = $request->all();
-        $customer->delete_flag = false;
         unset($form['_token']);
         $customer->fill($form)->save();
         return redirect('/customer');
@@ -42,6 +40,18 @@ class CustomerController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $customer->fill($form)->save();
+        return redirect('/customer');
+    }
+
+    public function delete(Request $request)
+    {
+        $customer = Customer::find($request->id);
+        return view('customer.del', ['form' => $customer]);
+    }
+
+    public function remove(Request $request)
+    {
+        Customer::find($request->id)->delete();
         return redirect('/customer');
     }
 }

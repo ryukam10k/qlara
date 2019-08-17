@@ -41,7 +41,10 @@
                         </tr>
                         <tr>
                             <th>源泉徴収有り</th>
-                            <td>{!! Form::checkbox('has_tax_with_holding'); !!}</td>
+                            <td>
+                                {{ Form::hidden('has_tax_with_holding', '0') }}
+                                {{ Form::checkbox('has_tax_with_holding') }}
+                            </td>
                         </tr>
                         <tr>
                             <th>メモ</th>

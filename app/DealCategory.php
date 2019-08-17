@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 class DealCategory extends Model
 {
+    use SoftDeletes;
+
     protected $guarded = array('id');
     
     public static $rules = array(

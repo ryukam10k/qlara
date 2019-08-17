@@ -35,6 +35,8 @@ Route::get('customer/add', 'CustomerController@add');
 Route::post('customer/add', 'CustomerController@create');
 Route::get('customer/edit', 'CustomerController@edit');
 Route::post('customer/edit', 'CustomerController@update');
+Route::get('customer/del', 'CustomerController@delete');
+Route::post('customer/del', 'CustomerController@remove');
 
 /** DealCategory */
 Route::get('dealcategory', 'DealCategoryController@index');

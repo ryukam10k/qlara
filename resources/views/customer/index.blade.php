@@ -5,24 +5,24 @@
     <div class="row justify-content-center">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">Customers</div>
+                <div class="card-header">顧客</div>
                 <div class="card-body">
-                    <a href="/customer/add">New Customer</a>
+                    <a href="/customer/add"><i class="fas fa-plus"></i> 顧客を追加する</a>
                     <table class="table">
                         <tr>
-                            <th>customer_name</th>
-                            <th>customer_short_name</th>
-                            <th>tax_with_holding_flag</th>
+                            <th>名称</th>
+                            <th>略称</th>
+                            <th>正式名称(会社名)</th>
+                            <th>源泉徴収有り</th>
                             <th></th>
                         </tr>
                         @foreach ($items as $item)
                         <tr>
-                            <td>{{$item->customer_name}}</td>
-                            <td>{{$item->customer_short_name}}</td>
-                            <td>{{$item->tax_with_holding_flag}}</td>
+                            <td><a href="/customer/edit?id={{$item->id}}">{{$item->name}}</a></td>
+                            <td>{{$item->short_name}}</td>
+                            <td>{{$item->full_name}}</td>
+                            <td>{{$item->has_tax_with_holding}}</td>
                             <td>
-                                <a href="/customer/show?id={{$item->id}}">show</a> | 
-                                <a href="/customer/edit?id={{$item->id}}">edit</a> | 
                                 <a href="/customer/del?id={{$item->id}}">del</a>
                             </td>
                         </tr>

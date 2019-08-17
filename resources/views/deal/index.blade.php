@@ -26,7 +26,7 @@
                             @foreach ($items as $item)
                             <tr>
                                 <td><a href="/deal/show?id={{$item->id}}">{{$item->id}}</a></td>
-                                <td>{{$item->customer->customer_name}}</td>
+                                <td>{{$item->customer->name}}</td>
                                 <td>{{$item->requestUser->name}}様</td>
                                 <td>{{$item->number}}</td>
                                 <td>{{$item->created_at->format('Y/m/d')}}</td>

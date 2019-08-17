@@ -21,10 +21,25 @@ class CustomerController extends Controller
 
     public function create(Request $request)
     {
+        dd($request);
         $this->validate($request, Customer::$rules);
         $customer = new Customer;
         $form = $request->all();
         $customer->delete_flag = false;
+        unset($form['_token']);
+        $customer->fill($form)->save();
+        return redirect('/customer');
+    }
+
+    public function edit(Request $request) {
+        $customer = Customer::find($request->id);
+        return view('customer.edit', ['form' => $customer]);
+    }
+
+    public function update(Request $request) {
+        $this->validate($request, Customer::$rules);
+        $customer = Customer::find($request->id);
+        $form = $request->all();
         unset($form['_token']);
         $customer->fill($form)->save();
         return redirect('/customer');

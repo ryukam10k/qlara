@@ -15,15 +15,15 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('customer_name');
-            $table->string('customer_short_name');
+            $table->string('name');
+            $table->string('short_name');
             $table->string('group_name')->nullable();
-            $table->string('company_name')->nullable();
+            $table->string('full_name')->nullable();
             $table->string('transfer_name')->nullable();
             $table->string('memo')->nullable();
             $table->boolean('delete_flag');
             $table->integer('closing_date')->nullable();
-            $table->boolean('tax_with_holding_flag');
+            $table->boolean('has_tax_with_holding');
             $table->timestamps();
         });
     }

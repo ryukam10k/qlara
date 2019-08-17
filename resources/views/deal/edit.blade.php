@@ -35,7 +35,7 @@
                             <td><input type="text" class="form-control" name="tag" value="{{$form->tag}}"></td>
                         </tr>
                         <tr>
-                            <th>価格</th>
+                            <th>受注額</th>
                             <td><input type="text" class="form-control" name="price" value="{{$form->price}}"></td>
                         </tr>
                         <tr>

@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\DealCategory;
+use App\User;
+use App\Customer;
 
 class Deal extends Model
 {
@@ -17,6 +19,7 @@ class Deal extends Model
 
     protected $dates = [
         'reception_date', // 追加しないとformatメソッドが使えない
+        'delivery_date',
         'created_at',
         'updated_at',
         //'deleted_at'
@@ -47,8 +50,19 @@ class Deal extends Model
         return "受付待ち";
     }
 
+    // 取引区分
     public function dealCategory() {
         return  $this->hasOne(DealCategory::class, 'id', 'deal_category_id');
+    }
+
+    // 依頼者
+    public function requestUser() {
+        return $this->hasOne(User::class, 'id', 'request_user_id');
+    }
+
+    // 依頼顧客
+    public function customer() {
+        return $this->hasOne(Customer::class, 'id', 'customer_id');
     }
 
     // memo：dealsテーブルの操作はここに書いていく

@@ -7,16 +7,16 @@
             <div class="card">
                 <div class="card-header">仕事依頼</div>
                 <div class="card-body">
-                    <a href="/retouchRequest"><i class="fas fa-plus"></i> 写真加工依頼</a>
+                    <a href="/retouchRequest"><i class="fas fa-plus"></i> 写真加工のご依頼はこちら</a>
                     <table class="table table-striped table-hover ">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>取引区分</th>
-                                <th>タグ</th>
-                                <th>取引先</th>
+                                <th>お客様名</th>
+                                <th>ご担当者名</th>
                                 <th>件数</th>
-                                <th>依頼日</th>
+                                <th>ご依頼日</th>
+                                <th>納品希望日</th>
                                 <th>ステータス</th>
                                 <th>ファイル</th>
                                 <th></th>
@@ -26,11 +26,11 @@
                             @foreach ($items as $item)
                             <tr>
                                 <td><a href="/deal/show?id={{$item->id}}">{{$item->id}}</a></td>
-                                <td>{{$item->dealCategory->deal_category_name}}</td>
-                                <td>{{$item->tag}}</td>
-                                <td></td>
+                                <td>{{$item->customer->customer_name}}</td>
+                                <td>{{$item->requestUser->name}}様</td>
                                 <td>{{$item->number}}</td>
                                 <td>{{$item->created_at->format('Y/m/d')}}</td>
+                                <td>{{$item->delivery_date->format('Y/m/d')}}</td>
                                 <td>{{$item->status()}}</td>
                                 <td><a href="/deal/download?id={{$item->id}}">download</a></td>
                                 <td>

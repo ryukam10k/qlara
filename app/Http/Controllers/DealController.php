@@ -11,6 +11,7 @@ class DealController extends Controller
     public function index(Request $request)
     {
         $deals = Deal::all();
+        //dd($deals);
         $param = ['items' => $deals];
         return view('deal.index', $param);
     }

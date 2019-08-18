@@ -13,6 +13,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>ユーザー名</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>

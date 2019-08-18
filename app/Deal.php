@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\DealCategory;
 use App\User;
 use App\Customer;
+use Illuminate\Support\Facades\Auth;
 
 class Deal extends Model
 {
@@ -66,4 +67,11 @@ class Deal extends Model
     }
 
     // memo：dealsテーブルの操作はここに書いていく
+
+    public static function findAll() {
+        $user = Auth::user();
+        $deals = Deal::all()->where('customer_id', $user->customer_id);
+        return $deals;
+    }
+
 }

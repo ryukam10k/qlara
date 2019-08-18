@@ -41,12 +41,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/deal">仕事依頼</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/customer">顧客</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/dealcategory">依頼カテゴリー</a>
-                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -64,7 +58,20 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    管理 <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="/customer">顧客</a>
+                                    <a class="nav-link" href="/dealcategory">依頼カテゴリー</a>
+                                    <a class="nav-link" href="/users">ユーザー</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span>{{ Auth::user()->name }} さま</span>
+                                    <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

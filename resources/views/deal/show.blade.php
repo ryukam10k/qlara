@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="/deal/">仕事依頼</a> > 詳細
+                    <a href="/deal/"><i class="fas fa-tasks"></i> 仕事依頼</a> ／ 詳細
                     <a href="/deal/del?id={{$form->id}}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
                 </div>
                 <div class="card-body">

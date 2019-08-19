@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <span style="color:#FF6F61;">Q</span>Lara
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/deal">仕事依頼</a>
+                            <a class="nav-link" href="/deal"><i class="fas fa-tasks"></i> 仕事依頼</a>
                         </li>
                     </ul>
 
@@ -58,27 +58,25 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    管理 <span class="caret"></span>
+                                    <i class="fas fa-cog"></i> 管理 <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link" href="/customer">顧客</a>
-                                    <a class="nav-link" href="/dealcategory">依頼カテゴリー</a>
-                                    <a class="nav-link" href="/users">ユーザー</a>
+                                    <a class="dropdown-item" href="/customer"><i class="fas fa-list-alt"></i> 顧客</a>
+                                    <a class="dropdown-item" href="/dealcategory"><i class="fas fa-list-alt"></i> 依頼カテゴリー</a>
+                                    <a class="dropdown-item" href="/users"><i class="fas fa-users"></i> ユーザー</a>
                                 </div>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span>{{ Auth::user()->name }} さま</span>
+                                    <span><i class="fas fa-user"></i> {{ Auth::user()->name }} 様</span>
                                     <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <span><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</span>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

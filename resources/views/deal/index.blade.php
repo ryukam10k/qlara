@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">仕事依頼</div>
+                <div class="card-header"><i class="fas fa-tasks"></i> 仕事依頼</div>
                 <div class="card-body">
                     <a href="/retouchRequest"><i class="fas fa-plus"></i> 写真加工のご依頼はこちら</a>
                     <table class="table table-striped table-hover ">

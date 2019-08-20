@@ -2,56 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Customer;
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $items = Customer::all();
-        $param = ['items' => $items];
-        return view('customer.index', $param);
+        $customers = Customer::all();
+        $customers = ['customers' => $customers];
+        return view('customers.index', $customers);
     }
 
-    public function add(Request $request)
+    public function create()
     {
-        return view('customer.add');
+        return view('customers.add');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, Customer::$rules);
         $customer = new Customer;
         $form = $request->all();
         unset($form['_token']);
         $customer->fill($form)->save();
-        return redirect('/customer');
+        return redirect('/customers');
     }
 
-    public function edit(Request $request) {
-        $customer = Customer::find($request->id);
-        return view('customer.edit', ['form' => $customer]);
+    public function show(Customer $customer)
+    {
+        return view('customers.show', ['customer' => $customer]);
     }
 
-    public function update(Request $request) {
+    public function edit(Customer $customer)
+    {
+        $customer = Customer::find($customer->id);
+        return view('customers.edit', ['customer' => $customer]);
+    }
+
+    public function update(Request $request, Customer $customer)
+    {
         $this->validate($request, Customer::$rules);
         $customer = Customer::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $customer->fill($form)->save();
-        return redirect('/customer');
+        return redirect('/customers');
     }
 
-    public function delete(Request $request)
+    public function destroy(Customer $customer)
     {
-        $customer = Customer::find($request->id);
-        return view('customer.del', ['form' => $customer]);
-    }
-
-    public function remove(Request $request)
-    {
-        Customer::find($request->id)->delete();
-        return redirect('/customer');
+        $customer->delete();
+        return redirect('/customers');
     }
 }

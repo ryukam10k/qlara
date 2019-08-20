@@ -12,6 +12,8 @@ class Customer extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
-        
+        'name' => 'required',
+        'short_name' => 'required',
+        'full_name' => 'required',
     );
 }

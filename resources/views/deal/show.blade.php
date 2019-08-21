@@ -8,7 +8,6 @@
             <div class="card">
                 <div class="card-header">
                     <a href="/deal/"><i class="fas fa-tasks"></i> 仕事依頼</a> ／ 詳細
-                    <a href="/deal/del?id={{$form->id}}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -49,6 +48,8 @@
                             <td>{{$form->reception_date}}</td>
                         </tr>
                     </table>
+                    <hr>
+                    <a href="/deal/del?id={{$form->id}}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> 削除</a>
                 </div>
             </div>
         </div>

@@ -10,8 +10,8 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        $customers = ['customers' => $customers];
-        return view('customers.index', $customers);
+        $prams = ['customers' => $customers];
+        return view('customers.index', $prams);
     }
 
     public function create()

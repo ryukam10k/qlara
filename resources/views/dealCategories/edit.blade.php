@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="card">
-                <div class="card-header"><a href="/dealcategory/">依頼カテゴリー</a> > 新規登録</div>
+            <div class="card-header"><a href="/dealCategories/"><i class="fas fa-list-alt"></i> 依頼区分</a> ／ 編集</div>
                 <div class="card-body">
                     @if (count($errors) > 0)
                     <div>
@@ -16,20 +16,22 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="/dealcategory/add" method="post">
+                    <form action="{{ url('dealCategories/'.$dealCategory->id) }}" method="post">
+                    <input type="hidden" name="id" value="{{$dealCategory->id}}">
                     <table class="table">
-                        {{ csrf_field() }}
+                        @csrf
+                        @method('PUT')
                         <tr>
-                            <th>依頼カテゴリー</th>
-                            <td><input type="text" class="form-control" name="deal_category_name" value="{{old('deal_category_name')}}"></td>
+                            <th>依頼区分</th>
+                            <td><input type="text" class="form-control" name="name" value="{{$dealCategory->name}}"></td>
                         </tr>
                         <tr>
                             <th>標準価格</th>
-                            <td><input type="text" class="form-control" name="basic_price" value="{{old('basic_price')}}"></td>
+                            <td><input type="text" class="form-control" name="basic_price" value="{{$dealCategory->basic_price}}"></td>
                         </tr>
                         <tr>
                             <th>表示順</th>
-                            <td><input type="text" class="form-control" name="sort_no" value="{{old('sort_no')}}"></td>
+                            <td><input type="text" class="form-control" name="sort_no" value="{{$dealCategory->sort_no}}"></td>
                         </tr>
                     </table>
                     <hr>

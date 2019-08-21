@@ -2,58 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\DealCategory;
+use Illuminate\Http\Request;
 
 class DealCategoryController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $items = DealCategory::all();
-        $param = ['items' => $items];
-        return view('dealcategory.index', $param);
+        $dealCategories = DealCategory::all();
+        $prams = ['dealCategories' => $dealCategories];
+        return view('dealCategories.index', $prams);
     }
 
-    public function add(Request $request)
+    public function create()
     {
-        return view('dealcategory.add');
+        return view('dealCategories.add');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, DealCategory::$rules);
         $dealCategory = new DealCategory;
         $form = $request->all();
         unset($form['_token']);
         $dealCategory->fill($form)->save();
-        return redirect('/dealcategory');
+        return redirect('/dealCategories');
     }
 
-    public function edit(Request $request)
+    public function show(DealCategory $dealCategory)
     {
-        $dealCategory = DealCategory::find($request->id);
-        return view('dealcategory.edit', ['form' => $dealCategory]);
+        return view('dealCategories.show', ['dealCategory' => $dealCategory]);
     }
 
-    public function update(Request $request)
+    public function edit(DealCategory $dealCategory)
+    {
+        $dealCateogry = DealCategory::find($dealCategory->id);
+        return view('dealCategories.edit', ['dealCategory' => $dealCategory]);
+    }
+
+    public function update(Request $request, DealCategory $dealCategory)
     {
         $this->validate($request, DealCategory::$rules);
-        $dealCategory = DealCategory::find($request->id);
+        $dealCateogry = DealCategory::find($request->id);
         $form = $request->all();
         unset($form['_token']);
-        $dealCategory->fill($form)->save();
-        return redirect('/dealcategory');
+        $dealCateogry->fill($form)->save();
+        return redirect('/dealCategories');
     }
 
-    public function delete(Request $request)
+    public function destroy(DealCategory $dealCategory)
     {
-        $word = DealCategory::find($request->id);
-        return view('dealcategory.del', ['form' => $word]);
-    }
-
-    public function remove(Request $request)
-    {
-        DealCategory::find($request->id)->delete();
-        return redirect('/dealcategory');
+        $dealCategory->delete();
+        return redirect('/dealCategories');
     }
 }

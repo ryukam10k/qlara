@@ -62,8 +62,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/customer"><i class="fas fa-list-alt"></i> 顧客</a>
-                                    <a class="dropdown-item" href="/dealcategory"><i class="fas fa-list-alt"></i> 依頼カテゴリー</a>
+                                    <a class="dropdown-item" href="/customers"><i class="fas fa-list-alt"></i> 顧客</a>
+                                    <a class="dropdown-item" href="/dealCategories"><i class="fas fa-list-alt"></i> 依頼区分</a>
                                     <a class="dropdown-item" href="/users"><i class="fas fa-users"></i> ユーザー</a>
                                 </div>
                             </li>

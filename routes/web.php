@@ -36,22 +36,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     /** Customer */
     Route::resource('customers', 'CustomerController');
-    /*
-    Route::get('customer', 'CustomerController@index');
-    Route::get('customer/add', 'CustomerController@add');
-    Route::post('customer/add', 'CustomerController@create');
-    Route::get('customer/edit', 'CustomerController@edit');
-    Route::post('customer/edit', 'CustomerController@update');
-    Route::get('customer/del', 'CustomerController@delete');
-    Route::post('customer/del', 'CustomerController@remove');
-    */
 
     /** DealCategory */
-    Route::get('dealcategory', 'DealCategoryController@index');
-    Route::get('dealcategory/add', 'DealCategoryController@add');
-    Route::post('dealcategory/add', 'DealCategoryController@create');
-    Route::get('dealcategory/edit', 'DealCategoryController@edit');
-    Route::post('dealcategory/edit', 'DealCategoryController@update');
-    Route::get('dealcategory/del', 'DealCategoryController@delete');
-    Route::post('dealcategory/del', 'DealCategoryController@remove');
+    Route::resource('dealCategories', 'DealCategoryController');
 });

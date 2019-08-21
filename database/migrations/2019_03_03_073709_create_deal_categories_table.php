@@ -15,7 +15,7 @@ class CreateDealCategoriesTable extends Migration
     {
         Schema::create('deal_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('deal_category_name');
+            $table->string('name');
             $table->integer('basic_price');
             $table->integer('sort_no');
             $table->timestamps();

@@ -29,6 +29,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static $rules = array(
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+    );
+
     public function customer() {
         return $this->hasOne(Customer::class, 'id', 'customer_id');
     }

@@ -35,7 +35,13 @@
                         </tr>
                         <tr>
                             <th>customer_id</th>
-                            <td><input type="text" class="form-control" name="customer_id" value="{{$user->customer_id}}" required></td>
+                            <td>
+                                <select name="customer_id" id="customers" class="form-control">
+                                    @foreach($customers as $customer)
+                                    <option value="{{$customer->id}}">{{$customer->name}}</option>
+                                    @endforeach
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <th>role_id</th>

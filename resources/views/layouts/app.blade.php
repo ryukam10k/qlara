@@ -56,17 +56,19 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fas fa-cog"></i> 管理 <span class="caret"></span>
-                                </a>
+                            @if (Auth::user()->role->is_admin == true)
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fas fa-cog"></i> 管理 <span class="caret"></span>
+                                    </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/customers"><i class="fas fa-list-alt"></i> 顧客</a>
-                                    <a class="dropdown-item" href="/dealCategories"><i class="fas fa-list-alt"></i> 依頼区分</a>
-                                    <a class="dropdown-item" href="/users"><i class="fas fa-users"></i> ユーザー</a>
-                                </div>
-                            </li>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/customers"><i class="fas fa-list-alt"></i> 顧客</a>
+                                        <a class="dropdown-item" href="/dealCategories"><i class="fas fa-list-alt"></i> 依頼区分</a>
+                                        <a class="dropdown-item" href="/users"><i class="fas fa-users"></i> ユーザー</a>
+                                    </div>
+                                </li>
+                            @endif
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

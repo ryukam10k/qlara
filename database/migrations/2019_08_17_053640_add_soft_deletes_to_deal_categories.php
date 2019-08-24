@@ -26,7 +26,7 @@ class AddSoftDeletesToDealCategories extends Migration
     public function down()
     {
         Schema::table('deal_categories', function (Blueprint $table) {
-            $table->dropColumn(softDeletes());
+            $table->dropSoftDeletes();
         });
     }
 }

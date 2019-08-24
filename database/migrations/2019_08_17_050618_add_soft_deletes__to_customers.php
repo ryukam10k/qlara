@@ -27,7 +27,7 @@ class AddSoftDeletesToCustomers extends Migration
     public function down()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->dropColumn(softDeletes());
+            $table->dropSoftDeletes();
             $table->boolean('delete_flag');
         });
     }

@@ -18,15 +18,15 @@
                             <td>{{$user->email}}</td>
                         </tr>
                         <tr>
-                            <th>customer_id</th>
+                            <th>customer</th>
                             <td>
-                                {{$user->customer_id}}
+                                {{$user->customer->name}}
                             </td>
                         </tr>
                         <tr>
-                            <th>role_id</th>
+                            <th>role</th>
                             <td>
-                                {{$user->role_id}}
+                                {{$user->role->name}}
                             </td>
                         </tr>
                         <tr>

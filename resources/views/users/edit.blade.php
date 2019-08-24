@@ -34,18 +34,24 @@
                             <td><input type="text" class="form-control" name="password" value="{{$user->password}}" required></td>
                         </tr>
                         <tr>
-                            <th>customer_id</th>
+                            <th>customer</th>
                             <td>
                                 <select name="customer_id" id="customers" class="form-control">
                                     @foreach($customers as $customer)
-                                    <option value="{{$customer->id}}">{{$customer->name}}</option>
+                                    <option value="{{$customer->id}}" @if($customer->id == $user->customer_id) selected @endif>{{$customer->name}}</option>
                                     @endforeach
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <th>role_id</th>
-                            <td><input type="text" class="form-control" name="role_id" value="{{$user->role_id}}" required></td>
+                            <th>role</th>
+                            <td>
+                                <select name="role_id" id="roles" class="form-control">
+                                    @foreach($roles as $role)
+                                    <option value="{{$role->id}}" @if($role->id == $user->role_id) selected @endif>{{$role->name}}</option>
+                                    @endforeach
+                                </select>
+                            </td>
                         </tr>
                     </table>
                     <hr>

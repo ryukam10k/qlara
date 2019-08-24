@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Customer;
+use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,7 +19,8 @@ class UserController extends Controller
     public function create()
     {
         $customers = Customer::all();
-        return view('users.add', ['customers' => $customers]);
+        $roles = Role::all();
+        return view('users.add', ['customers' => $customers, 'roles' => $roles]);
     }
 
     public function store(Request $request)
@@ -41,8 +43,9 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $customers = Customer::all();
+        $roles = Role::all();
         $user = User::find($user->id);
-        return view('users.edit', ['user' => $user, 'customers' => $customers]);
+        return view('users.edit', ['user' => $user, 'customers' => $customers, 'roles' => $roles]);
     }
 
     public function update(Request $request, User $user)

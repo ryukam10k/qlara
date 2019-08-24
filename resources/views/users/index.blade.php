@@ -26,7 +26,7 @@
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->customer->name}}</td>
-                                <td>{{$user->role_id}}</td>
+                                <td>{{$user->role->name}}</td>
                                 <td>
                                     <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
                                 </td>

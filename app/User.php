@@ -38,4 +38,8 @@ class User extends Authenticatable
     public function customer() {
         return $this->hasOne(Customer::class, 'id', 'customer_id');
     }
+
+    public function role() {
+        return $this->hasOne(Role::class, 'id', 'role_id');
+    }
 }

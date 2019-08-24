@@ -33,7 +33,7 @@
                             <td><input type="text" class="form-control" name="password" value="{{old('password')}}" required></td>
                         </tr>
                         <tr>
-                            <th>customer_id</th>
+                            <th>customer</th>
                             <td>
                                 <select name="customer_id" id="customers" class="form-control">
                                     @foreach($customers as $customer)
@@ -43,8 +43,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>role_id</th>
-                            <td><input type="text" class="form-control" name="role_id" value="{{old('role_id')}}" required></td>
+                            <th>role</th>
+                            <td>
+                                <select name="role_id" id="roles" class="form-control">
+                                    @foreach($roles as $role)
+                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                    @endforeach
+                                </select>
+                            </td>
                         </tr>
                     </table>
                     <hr>

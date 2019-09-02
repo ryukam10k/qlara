@@ -18,12 +18,12 @@ Route::get('/', function () {
 /* Auth */
 Auth::routes();
 
-/* Users */
-Route::resource('users', 'UserController');
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
+    /* Users */
+    Route::resource('users', 'UserController');
+
     /** Deal */
     Route::get('deal', 'DealController@index');
     Route::get('deal/add', 'DealController@add');

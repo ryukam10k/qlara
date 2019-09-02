@@ -31,7 +31,7 @@
                         </tr>
                         <tr>
                             <th>password</th>
-                            <td><input type="text" class="form-control" name="password" value="{{$user->password}}" required></td>
+                            <td>パスワードは変更不可</td>
                         </tr>
                         <tr>
                             <th>customer</th>

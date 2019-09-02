@@ -50,12 +50,11 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $this->validate($request, User::$rules);
+        $this->validate($request, User::$rules_update);
         $user = User::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $user->fill($form);
-        $user->password = Hash::make($form['password']);
         $user->save();
         return redirect('/users');
     }

@@ -35,6 +35,11 @@ class User extends Authenticatable
         'password' => 'required',
     );
 
+    public static $rules_update = array(
+        'name' => 'required',
+        'email' => 'required',
+    );
+
     public function customer() {
         return $this->hasOne(Customer::class, 'id', 'customer_id');
     }

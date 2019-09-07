@@ -25,7 +25,7 @@
                             <td>
                                 <select name="deal_category_id" id="dealCategories" class="form-control">
                                     @foreach($dealCategories as $dealCategory)
-                                    <option value="{{$dealCategory->id}}" @if($form->deal_category_id == $dealCategory->id) selected @endif>{{$dealCategory->deal_category_name}}</option>
+                                    <option value="{{$dealCategory->id}}" @if($form->deal_category_id == $dealCategory->id) selected @endif>{{$dealCategory->name}}</option>
                                     @endforeach
                                 </select>
                             </td>

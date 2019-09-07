@@ -40,7 +40,6 @@
                             @endforeach 
                         </tbody>
                     </table>
-                    <a href="/deal/add">New Deal</a>
                 </div>
             </div>
         </div>

@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Deal extends Model
 {
-    protected $guarded = array('id');
-    
+    protected $guarded = array('id', 'delivery_date');
+
     public static $rules = array(
-        
+        'file' => 'required',
+        'delivery_date' => 'required',
     );
 
     //use SoftDeletes;

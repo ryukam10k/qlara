@@ -14,7 +14,6 @@
                                 <th>#</th>
                                 <th>お客様名</th>
                                 <th>ご担当者名</th>
-                                <th>件数</th>
                                 <th>ご依頼日</th>
                                 <th>納品希望日</th>
                                 <th>ステータス</th>
@@ -28,7 +27,6 @@
                                 <td><a href="/deal/show?id={{$item->id}}">{{$item->id}}</a></td>
                                 <td>{{$item->customer->name}}</td>
                                 <td>{{$item->requestUser->name}}様</td>
-                                <td>{{$item->number}}</td>
                                 <td>{{$item->created_at->format('Y/m/d')}}</td>
                                 <td>{{$item->delivery_date->format('Y/m/d')}}</td>
                                 <td>{{$item->status()}}</td>
@@ -37,7 +35,7 @@
                                     <a href="/deal/edit?id={{$item->id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
                                 </td>
                             </tr>
-                            @endforeach 
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -26,20 +26,10 @@
                             <td><input type="file" name="file" id="file" multiple></td>
                         </tr>
                         <tr>
-                            <th>件数</th>
-                            <td><input type="text" class="form-control" name="number" value="{{old('number')}}"></td>
-                        </tr>
-                        <tr>
                             <th>納品希望日</th>
                             <td>
                                 <div>
-                                    <input id="datepicker" type="text" class="form-control" name="" value="">
-                                </div>
-                                <div style="font-size: .8em;">
-                                    料金：
-                                    <span>7日以内：通常料金</span>
-                                    <span>3日以内：+20％</span>
-                                    <span>24時間以内：+50％</span>
+                                    <input id="datepicker" type="text" class="form-control" name="delivery_date" value="" autocomplete="off">
                                 </div>
                             </td>
                         </tr>
@@ -48,8 +38,6 @@
                             <td><textarea class="form-control" rows="4" name="memo">{{old('memo')}}</textarea></td>
                         </tr>
                     </table>
-                    <hr>
-                    参考見積：3,000円
                     <hr>
                     <div><input type="submit" class="btn btn-primary btn-block" value="依頼する"></div>
                     </form>

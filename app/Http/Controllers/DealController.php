@@ -24,15 +24,19 @@ class DealController extends Controller
 
     public function create(Request $request)
     {
-        //dd(Auth::user());
+        //dd($request);
         $this->validate($request, Deal::$rules);
         $deal = new Deal;
         $form = $request->all();
+
         unset($form['_token']);
         unset($form['file']);
         $deal->fill($form);
+        // もっと良い方法がある気がする
+        $deal->delivery_date = date('Y-m-d', strtotime($form['delivery_date']));
         $deal->customer_id = Auth::user()->customer_id;
         $deal->request_user_id = Auth::user()->id;
+        
         $deal->save();
 
         if ($request->file('file') != null) {
@@ -77,9 +81,9 @@ class DealController extends Controller
         $headers = ['Content-Type' => 'image/jpeg'];
         $filename = $request->id . '.jpeg';
         return response()->download(\Storage::path($request->id . '/' . $request->id . '.jpeg'), $filename, $headers);
-     
+
         // ストレージの中なら直接ダウンロードできる
         //return Storage::download($request->id, $filename, $headers);
     }
-    
+
 }

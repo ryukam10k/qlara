@@ -11,7 +11,8 @@
                     <table class="table table-striped table-hover ">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>依頼No</th>
+                                <th>依頼内容</th>
                                 <th>お客様名</th>
                                 <th>ご担当者名</th>
                                 <th>ご依頼日</th>
@@ -24,7 +25,8 @@
                         <tbody>
                             @foreach ($items as $item)
                             <tr>
-                                <td><a href="/deal/show?id={{$item->id}}">{{$item->id}}</a></td>
+                                <td><a href="/deal/show?id={{$item->id}}" style="display:block;">{{$item->id}}</a></td>
+                                <td>{{$item->dealCategory->name}}</td>
                                 <td>{{$item->customer->name}}</td>
                                 <td>{{$item->requestUser->name}}様</td>
                                 <td>{{$item->created_at->format('Y/m/d')}}</td>

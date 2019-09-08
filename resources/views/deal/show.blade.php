@@ -62,6 +62,12 @@
                             <td>{{$form->price}}</td>
                         </tr>
                     </table>
+                    <table class="table table-sm">
+                        <tr>
+                            <th>納品物</th>
+                            <td><a href="https://www.dropbox.com/sh/js9u315r3lemvjr/AAAqc-LefQdIGoJ9MiIKDy6Ra?dl=0" target="_blank"><i class="fas fa-download"></i> 納品物のダウンロードページを開く（Dropbox <i class="fab fa-dropbox"></i> が開きます）</a></td>
+                        </tr>
+                    </table>
                     <table class="table table-light table-sm">
                         <tr>
                             <th>依頼日時</th>
@@ -84,14 +90,13 @@
                     <hr>
                     <div class="btnArea">
                         <div class="btnArea__left">
-                            <a href="/deal/del?id={{$form->id}}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> 依頼取消</a>
-                            <a href="/deal/edit?id={{$form->id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i> 依頼編集</a>
-                            <a href="" class="btn btn-success btn-sm"><i class="fas fa-download"></i> 納品物ダウンロード</a>
+                            <a href="/deal/del?id={{$form->id}}" class="btn btn-danger"><i class="far fa-trash-alt"></i> 依頼取消</a>
+                            <a href="/deal/edit?id={{$form->id}}" class="btn btn-primary"><i class="far fa-edit"></i> 依頼編集</a>
                         </div>
                         <div class="btnArea__right">
-                            <a href="" class="btn btn-primary btn-sm">確認依頼</a>
-                            <a href="" class="btn btn-primary btn-sm">納品</a>
-                            <a href="" class="btn btn-primary btn-sm">完了</a>
+                            <a href="" class="btn btn-primary">確認依頼</a>
+                            <a href="" class="btn btn-primary">納品</a>
+                            <a href="" class="btn btn-primary">完了</a>
                         </div>
                     </div>
                 </div>

@@ -32,17 +32,18 @@ class DealController extends Controller
         unset($form['_token']);
         unset($form['file']);
         $deal->fill($form);
+
+        $file_name = $request->file('file')->getClientOriginalName();
+
         // もっと良い方法がある気がする
+        $deal->upload_filename = $file_name;
         $deal->delivery_date = date('Y-m-d', strtotime($form['delivery_date']));
         $deal->customer_id = Auth::user()->customer_id;
         $deal->request_user_id = Auth::user()->id;
-        
         $deal->save();
 
-        if ($request->file('file') != null) {
-            $file_name = $request->file('file')->getClientOriginalName();
-            $request->file('file')->storeAs($deal->id, $file_name);
-        }
+        // ファイル保存
+        $request->file('file')->storeAs($deal->id, $file_name);
 
         return redirect('/deal');
     }
@@ -79,11 +80,9 @@ class DealController extends Controller
     public function download(Request $request){
         // レスポンス版
         $headers = ['Content-Type' => 'image/jpeg'];
-        $filename = $request->id . '.jpeg';
-        return response()->download(\Storage::path($request->id . '/' . $request->id . '.jpeg'), $filename, $headers);
-
-        // ストレージの中なら直接ダウンロードできる
-        //return Storage::download($request->id, $filename, $headers);
+        $deal = Deal::find($request->id);
+        $fileName = $deal->upload_filename;
+        return response()->download(\Storage::path($deal->id . '/' . $fileName), $fileName, $headers);
     }
 
 }

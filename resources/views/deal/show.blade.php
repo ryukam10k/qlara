@@ -31,22 +31,23 @@
                     <a href="/deal/"><i class="fas fa-tasks"></i> 仕事依頼</a> ／ 詳細
                 </div>
                 <div class="card-body">
+                    <a href="javascript:history.back()">戻る</a>
                     <table class="table table-sm">
                         <tr>
                             <th>依頼No</th>
                             <td>{{$form->id}}</td>
                         </tr>
                         <tr>
+                            <th>依頼内容</th>
+                            <td>{{$form->dealCategory->name}}</td>
+                        </tr>
+                        <tr>
                             <th>アップロードファイル</th>
-                            <td><a href="/deal/download?id={{$form->id}}">download</a></td>
+                            <td><a href="/deal/download?id={{$form->id}}">{{$form->upload_filename}}</a></td>
                         </tr>
                         <tr>
                             <th>納品希望日</th>
                             <td>{{$form->delivery_date}}</td>
-                        </tr>
-                        <tr>
-                            <th>依頼内容</th>
-                            <td>{{$form->dealCategory->name}}</td>
                         </tr>
                         <tr>
                             <th>希望記入欄</th>
@@ -79,13 +80,15 @@
                             <td>{{$form->end_date}}</td>
                         </tr>
                     </table>
+                    <a href="javascript:history.back()">戻る</a>
                     <hr>
                     <div class="btnArea">
                         <div class="btnArea__left">
                             <a href="/deal/del?id={{$form->id}}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> 依頼取消</a>
+                            <a href="/deal/edit?id={{$form->id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i> 依頼編集</a>
+                            <a href="" class="btn btn-success btn-sm"><i class="fas fa-download"></i> 納品物ダウンロード</a>
                         </div>
                         <div class="btnArea__right">
-                            <a href="" class="btn btn-primary btn-sm">依頼受付</a>
                             <a href="" class="btn btn-primary btn-sm">確認依頼</a>
                             <a href="" class="btn btn-primary btn-sm">納品</a>
                             <a href="" class="btn btn-primary btn-sm">完了</a>

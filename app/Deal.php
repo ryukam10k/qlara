@@ -72,7 +72,7 @@ class Deal extends Model
     public static function findAll() {
         $user = Auth::user();
         $deals = Deal::all();
-        if ($user != null) {
+        if (!$user->role->is_admin) {
             $deals = $deals->where('customer_id', $user->customer_id);
         }
         return $deals;

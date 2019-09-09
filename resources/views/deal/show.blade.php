@@ -65,7 +65,7 @@
                     <table class="table table-sm">
                         <tr>
                             <th>納品物</th>
-                            <td><a href="https://www.dropbox.com/sh/js9u315r3lemvjr/AAAqc-LefQdIGoJ9MiIKDy6Ra?dl=0" target="_blank"><i class="fas fa-download"></i> 納品物のダウンロードページを開く（Dropbox <i class="fab fa-dropbox"></i> が開きます）</a></td>
+                            <td><a href={{$form->deliverable_uri}} target="_blank"><i class="fas fa-download"></i> 納品物のダウンロードページを開く（Dropbox <i class="fab fa-dropbox"></i> が開きます）</a></td>
                         </tr>
                     </table>
                     <table class="table table-light table-sm">

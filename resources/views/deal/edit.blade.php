@@ -86,6 +86,12 @@
                             <td><input type="text" class="form-control" name="price" value="{{$form->price}}"></td>
                         </tr>
                     </table>
+                    <table class="table table-sm">
+                        <tr>
+                            <th>納品物</th>
+                            <td><input type="text" class="form-control" name="deliverable_uri" value="{{$form->deliverable_uri}}"></td>
+                        </tr>
+                    </table>
                     <table class="table table-light table-sm">
                         <tr>
                             <th>依頼日時</th>

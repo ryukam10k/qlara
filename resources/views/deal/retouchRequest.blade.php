@@ -23,7 +23,7 @@
                         {{ csrf_field() }}
                         <tr>
                             <th>ファイル添付</th>
-                            <td><input type="file" name="file" id="file" multiple></td>
+                            <td><input type="file" name="file" id="file"></td>
                         </tr>
                         <tr>
                             <th>納品希望日</th>

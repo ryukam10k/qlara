@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="/deal/edit" method="post">
+                    <form action="/deal/edit" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="{{$form->id}}">
                     <a href="javascript:history.back()">戻る</a>
                     <table class="table table-sm">
@@ -58,7 +58,12 @@
                         </tr>
                         <tr>
                             <th>アップロードファイル</th>
-                            <td><input type="file" name="file" id="file" multiple value="file.txt"></td>
+                            <td>
+                                <input type="file" name="file" id="file">
+                                <div>
+                                    <span>{{$form->upload_filename}}</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <th>納品希望日</th>
@@ -92,7 +97,7 @@
                         </tr>
                         <tr>
                             <th>納品日時</th>
-                            <td><input type="text" class="form-control" name="" value=""></td>
+                            <td><input type="text" class="form-control" name="delivery_date" value="{{$form->delivery_date}}"></td>
                         </tr>
                         <tr>
                             <th>完了日時</th>

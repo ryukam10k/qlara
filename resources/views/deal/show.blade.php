@@ -79,7 +79,7 @@
                         </tr>
                         <tr>
                             <th>納品日時</th>
-                            <td></td>
+                            <td>{{$form->delivery_date}}</td>
                         </tr>
                         <tr>
                             <th>完了日時</th>

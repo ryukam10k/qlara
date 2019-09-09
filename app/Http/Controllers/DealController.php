@@ -62,12 +62,22 @@ class DealController extends Controller
 
     public function update(Request $request)
     {
-        //dd($request);
-        $this->validate($request, Deal::$rules);
+        $this->validate($request, Deal::$edit_rules);
         $deal = Deal::find($request->id);
         $form = $request->all();
         unset($form['_token']);
-        $deal->fill($form)->save();
+        unset($form['file']);
+        $deal->fill($form);
+
+        // ファイル保存
+        if ($request->file('file') != null) {
+            $file_name = $request->file('file')->getClientOriginalName();
+            $deal->upload_filename = $file_name;
+            $request->file('file')->storeAs($deal->id, $file_name);
+        }
+
+        $deal->save();
+
         return redirect('/deal');
     }
 

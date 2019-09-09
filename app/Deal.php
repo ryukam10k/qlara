@@ -17,6 +17,10 @@ class Deal extends Model
         'delivery_date' => 'required',
     );
 
+    public static $edit_rules = array(
+        'delivery_date' => 'required',
+    );
+
     //use SoftDeletes;
 
     protected $dates = [

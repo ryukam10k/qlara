@@ -63,7 +63,7 @@ class LoginController extends Controller
             $newUser->role_id = 1; // 一般ユーザー
             $newUser->save();
 
-            Auth::login($newUser);
+            Auth::login($newUser, true);
             return redirect('/deal');
         }
     }

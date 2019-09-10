@@ -3,6 +3,10 @@
 /* Auth */
 Auth::routes();
 
+/** SocialLogin */
+Route::get('login/{provider}', 'Auth\LoginController@socialLogin');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function() {

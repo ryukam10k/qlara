@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'customer_id', 'role_id'
+        'name', 'email', 'customer_id', 'role_id'
     ];
 
     /**
@@ -26,13 +26,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'remember_token',
     ];
 
     public static $rules = array(
         'name' => 'required',
         'email' => 'required',
-        'password' => 'required',
     );
 
     public static $rules_update = array(

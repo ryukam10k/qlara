@@ -20,8 +20,6 @@ class EventServiceProvider extends ServiceProvider
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             'SocialiteProviders\Line\LineExtendSocialite@handle',
-            'SocialiteProviders\Twitter\TwitterExtendSocialite@handle',
-            'SocialiteProviders\Google\GoogleExtendSocialite',
         ],
     ];
 

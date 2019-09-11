@@ -40,6 +40,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function localLogin()
+    {
+        return view('auth/localLogin');
+    }
+
     public function socialLogin($social)
     {
         return Socialite::driver($social)->redirect();

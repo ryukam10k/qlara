@@ -3,6 +3,8 @@
 /* Auth */
 Auth::routes();
 
+Route::get('localLogin', 'Auth\LoginController@localLogin');
+
 /** SocialLogin */
 Route::get('login/{provider}', 'Auth\LoginController@socialLogin');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');

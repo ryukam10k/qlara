@@ -69,7 +69,7 @@
                             <th>納品希望日</th>
                             <td>
                                 <div>
-                                    <input id="datepicker" type="text" class="form-control" name="delivery_date" value="{{$form->delivery_date}}" autocomplete="off">
+                                    <input id="datepicker" type="text" class="form-control" name="due_date" value="{{$form->due_date}}" autocomplete="off">
                                 </div>
                             </td>
                         </tr>

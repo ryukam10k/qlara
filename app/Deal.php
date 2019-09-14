@@ -10,20 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class Deal extends Model
 {
-    protected $guarded = array('id', 'delivery_date');
+    protected $guarded = array('id', 'due_date');
 
     public static $rules = array(
         'file' => 'required',
-        'delivery_date' => 'required',
+        'due_date' => 'required',
     );
 
     public static $edit_rules = array(
-        'delivery_date' => 'required',
+        'due_date' => 'required',
     );
 
     //use SoftDeletes;
 
     protected $dates = [
+        'due_date',
         'reception_date', // 追加しないとformatメソッドが使えない
         'delivery_date',
         'created_at',

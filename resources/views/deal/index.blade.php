@@ -47,7 +47,7 @@
                                 <td>{{$item->customer->name}}</td>
                                 <td>{{$item->requestUser->name}} 様</td>
                                 <td>{{$item->created_at->format('Y/m/d')}}</td>
-                                <td>{{$item->delivery_date->format('Y/m/d')}}</td>
+                                <td>{{$item->due_date->format('Y/m/d')}}</td>
                                 <td>{{$item->status()}}</td>
                                 <td>
                                     <a href="/deal/edit?id={{$item->id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>

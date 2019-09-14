@@ -47,7 +47,7 @@
                         </tr>
                         <tr>
                             <th>納品希望日</th>
-                            <td>{{$form->delivery_date}}</td>
+                            <td>{{$form->due_date}}</td>
                         </tr>
                         <tr>
                             <th>希望記入欄</th>

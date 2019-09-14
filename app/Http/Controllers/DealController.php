@@ -37,7 +37,7 @@ class DealController extends Controller
 
         // もっと良い方法がある気がする
         $deal->upload_filename = $file_name;
-        $deal->delivery_date = date('Y-m-d', strtotime($form['delivery_date']));
+        $deal->due_date = date('Y-m-d', strtotime($form['due_date']));
         $deal->customer_id = Auth::user()->customer_id;
         $deal->request_user_id = Auth::user()->id;
         $deal->save();
@@ -62,12 +62,14 @@ class DealController extends Controller
 
     public function update(Request $request)
     {
+        //dd($request);
         $this->validate($request, Deal::$edit_rules);
         $deal = Deal::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         unset($form['file']);
         $deal->fill($form);
+        $deal->due_date = date('Y-m-d', strtotime($form['due_date']));
 
         // ファイル保存
         if ($request->file('file') != null) {

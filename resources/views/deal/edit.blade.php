@@ -99,15 +99,15 @@
                         </tr>
                         <tr>
                             <th>受付日時</th>
-                            <td><input type="text" class="form-control datepick" name="reception_date" value="{{$form->reception_date}}" autocomplete="off"></td>
+                            <td><input type="text" class="form-control datetimepick" name="reception_date" value="{{$form->reception_date}}" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <th>納品日時</th>
-                            <td><input type="text" class="form-control datepick" name="delivery_date" value="{{$form->delivery_date}}" autocomplete="off"></td>
+                            <td><input type="text" class="form-control datetimepick" name="delivery_date" value="{{$form->delivery_date}}" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <th>完了日時</th>
-                            <td><input type="text" class="form-control datepick" name="end_date" value="{{$form->end_date}}" autocomplete="off"></td>
+                            <td><input type="text" class="form-control datetimepick" name="end_date" value="{{$form->end_date}}" autocomplete="off"></td>
                         </tr>
                     </table>
                     <a href="javascript:history.back()">戻る</a>

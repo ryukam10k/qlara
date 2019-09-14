@@ -94,12 +94,22 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     <script>
         $(function () {
-            $.datepicker.setDefaults($.datepicker.regional["ja"]);
+            //$.datetimepicker.setDefaults($.datetimepicker.regional["ja"]);
+            $('.datetimepick').each(function(){
+                $(this).datetimepicker();
+            });
             $('.datepick').each(function(){
-                $(this).datepicker();
+                $(this).datetimepicker({
+                    format:'Y/m/d',
+                    timepicker:false,
+                });
             });
         });
     </script>

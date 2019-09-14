@@ -77,19 +77,19 @@ class DealController extends Controller
         }
 
         if ($form['reception_date'] != null) {
-            $deal->reception_date = date('Y-m-d', strtotime($form['reception_date']));
+            $deal->reception_date = date('Y-m-d H:i:s', strtotime($form['reception_date']));
         } else {
             $deal->reception_date = null;
         }
 
         if ($form['delivery_date'] != null) {
-            $deal->delivery_date = date('Y-m-d', strtotime($form['delivery_date']));
+            $deal->delivery_date = date('Y-m-d H:i:s', strtotime($form['delivery_date']));
         } else {
             $deal->delivery_date = null;
         }
 
         if ($form['end_date'] != null) {
-            $deal->end_date = date('Y-m-d', strtotime($form['end_date']));
+            $deal->end_date = date('Y-m-d H:i:s', strtotime($form['end_date']));
         } else {
             $deal->end_date = null;
         }

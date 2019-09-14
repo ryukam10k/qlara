@@ -29,7 +29,7 @@
                             <th>納品希望日</th>
                             <td>
                                 <div>
-                                    <input id="datepicker" type="text" class="form-control" name="due_date" value="" autocomplete="off">
+                                    <input type="text" class="form-control datepick" name="due_date" value="" autocomplete="off">
                                 </div>
                             </td>
                         </tr>

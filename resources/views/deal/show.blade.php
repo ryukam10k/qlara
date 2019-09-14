@@ -65,7 +65,11 @@
                     <table class="table table-sm">
                         <tr>
                             <th>納品物</th>
-                            <td><a href={{$form->deliverable_uri}} target="_blank"><i class="fas fa-download"></i> 納品物のダウンロードページを開く（Dropbox <i class="fab fa-dropbox"></i> が開きます）</a></td>
+                            <td>
+                                @if ($form->deliverable_uri != null)
+                                <a href={{$form->deliverable_uri}} target="_blank"><i class="fas fa-download"></i> 納品物のダウンロードページを開く（Dropbox <i class="fab fa-dropbox"></i> が開きます）</a>
+                                @endif
+                            </td>
                         </tr>
                     </table>
                     <table class="table table-light table-sm">

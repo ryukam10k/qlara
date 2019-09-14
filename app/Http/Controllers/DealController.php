@@ -117,6 +117,13 @@ class DealController extends Controller
         $headers = ['Content-Type' => 'image/jpeg'];
         $deal = Deal::find($request->id);
         $fileName = $deal->upload_filename;
+
+        // 受付日時更新
+        if ($deal->reception_date == null) {
+            $deal->reception_date = date("Y-m-d H:i:s");
+            $deal->save();
+        }
+
         return response()->download(\Storage::path($deal->id . '/' . $fileName), $fileName, $headers);
     }
 

@@ -98,7 +98,6 @@
                             <a href="/deal/edit?id={{$form->id}}" class="btn btn-primary"><i class="far fa-edit"></i> 依頼編集</a>
                         </div>
                         <div class="btnArea__right">
-                            <a href="" class="btn btn-primary">確認依頼</a>
                             <a href="" class="btn btn-primary">納品</a>
                             <a href="" class="btn btn-primary">完了</a>
                         </div>

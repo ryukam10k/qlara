@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Deal extends Model
 {
-    protected $guarded = array('id', 'due_date');
+    protected $guarded = array('id', 'due_date', 'reception_date', 'delivery_date', 'end_date');
 
     public static $rules = array(
         'file' => 'required',
@@ -27,6 +27,7 @@ class Deal extends Model
         'due_date',
         'reception_date', // 追加しないとformatメソッドが使えない
         'delivery_date',
+        'end_date',
         'created_at',
         'updated_at',
         //'deleted_at'
@@ -49,6 +50,9 @@ class Deal extends Model
     // ステータス
     public function status() {
         if ($this->end_date != null) {
+            return "完了";
+        }
+        if ($this->delivery_date != null) {
             return "納品済";
         }
         if ($this->reception_date != null) {

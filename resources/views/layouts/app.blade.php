@@ -98,7 +98,9 @@
     <script>
         $(function () {
             $.datepicker.setDefaults($.datepicker.regional["ja"]);
-            $("#datepicker").datepicker();
+            $('.datepick').each(function(){
+                $(this).datepicker();
+            });
         });
     </script>
 </body>

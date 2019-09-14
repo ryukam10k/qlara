@@ -14,7 +14,7 @@ class AddDeliveryDateToDealsTable extends Migration
     public function up()
     {
         Schema::table('deals', function (Blueprint $table) {
-            $table->dateTime('delivery_date')->default('2099-12-31 00:00');
+            $table->dateTime('delivery_date');
         });
     }
 

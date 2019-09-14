@@ -69,7 +69,7 @@
                             <th>納品希望日</th>
                             <td>
                                 <div>
-                                    <input id="datepicker" type="text" class="form-control" name="due_date" value="{{$form->due_date}}" autocomplete="off">
+                                    <input type="text" class="form-control datepick" name="due_date" value="{{$form->due_date}}" autocomplete="off">
                                 </div>
                             </td>
                         </tr>
@@ -95,19 +95,19 @@
                     <table class="table table-light table-sm">
                         <tr>
                             <th>依頼日時</th>
-                            <td><input type="text" class="form-control" name="created_at" value="{{$form->created_at}}"></td>
+                            <td><input type="text" class="form-control" name="created_at" value="{{$form->created_at}}" readonly></td>
                         </tr>
                         <tr>
                             <th>受付日時</th>
-                            <td><input type="text" class="form-control" name="reception_date" value="{{$form->reception_date}}"></td>
+                            <td><input type="text" class="form-control datepick" name="reception_date" value="{{$form->reception_date}}" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <th>納品日時</th>
-                            <td><input type="text" class="form-control" name="delivery_date" value="{{$form->delivery_date}}"></td>
+                            <td><input type="text" class="form-control datepick" name="delivery_date" value="{{$form->delivery_date}}" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <th>完了日時</th>
-                            <td><input type="text" class="form-control" name="end_date" value="{{$form->end_date}}"></td>
+                            <td><input type="text" class="form-control datepick" name="end_date" value="{{$form->end_date}}" autocomplete="off"></td>
                         </tr>
                     </table>
                     <a href="javascript:history.back()">戻る</a>

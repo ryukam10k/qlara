@@ -69,7 +69,30 @@ class DealController extends Controller
         unset($form['_token']);
         unset($form['file']);
         $deal->fill($form);
-        $deal->due_date = date('Y-m-d', strtotime($form['due_date']));
+
+        if ($form['due_date'] != null) {
+            $deal->due_date = date('Y-m-d', strtotime($form['due_date']));
+        } else {
+            $deal->due_date = null;
+        }
+
+        if ($form['reception_date'] != null) {
+            $deal->reception_date = date('Y-m-d', strtotime($form['reception_date']));
+        } else {
+            $deal->reception_date = null;
+        }
+
+        if ($form['delivery_date'] != null) {
+            $deal->delivery_date = date('Y-m-d', strtotime($form['delivery_date']));
+        } else {
+            $deal->delivery_date = null;
+        }
+
+        if ($form['end_date'] != null) {
+            $deal->end_date = date('Y-m-d', strtotime($form['end_date']));
+        } else {
+            $deal->end_date = null;
+        }
 
         // ファイル保存
         if ($request->file('file') != null) {

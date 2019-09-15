@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('retouchRequest', 'DealController@retouchRequest');
     Route::get('deal/show', 'DealController@show');
     Route::get('deal/download', 'DealController@download');
+    Route::get('deal/delivery', 'DealController@delivery');
+    Route::post('deal/delivery', 'DealController@exeDelivery');
 
     /** Customer */
     Route::resource('customers', 'CustomerController');

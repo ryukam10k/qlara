@@ -127,4 +127,22 @@ class DealController extends Controller
         return response()->download(\Storage::path($deal->id . '/' . $fileName), $fileName, $headers);
     }
 
+    public function delivery(Request $request) {
+        $deal = Deal::find($request->id);
+        return view('deal.delivery', ['form' => $deal]);
+    }
+
+    public function exeDelivery(Request $request) {
+        $form = $request->all();
+
+        $deal = Deal::find($request->id);
+        $deal->deliverable_uri = $form['deliverable_uri'];
+        if ($deal->delivery_date == null) {
+            $deal->delivery_date = date("Y-m-d H:i:s");
+        }
+        $deal->save();
+
+        return view('deal.show', ['form' => $deal]);
+    }
+
 }

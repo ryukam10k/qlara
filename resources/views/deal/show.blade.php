@@ -94,12 +94,16 @@
                     <hr>
                     <div class="btnArea">
                         <div class="btnArea__left">
+                            @if (Auth::user()->role->is_admin == true || $form->reception_date == null)
                             <a href="/deal/del?id={{$form->id}}" class="btn btn-danger"><i class="far fa-trash-alt"></i> 依頼取消</a>
                             <a href="/deal/edit?id={{$form->id}}" class="btn btn-primary"><i class="far fa-edit"></i> 依頼編集</a>
+                            @endif
                         </div>
                         <div class="btnArea__right">
+                            @if (Auth::user()->role->is_admin == true)
                             <a href="/deal/delivery?id={{$form->id}}" class="btn btn-primary">納品</a>
                             <a href="" class="btn btn-primary">完了</a>
+                            @endif
                         </div>
                     </div>
                 </div>

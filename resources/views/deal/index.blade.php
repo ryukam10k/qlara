@@ -26,7 +26,7 @@
                 <div class="card-header"><i class="fas fa-tasks"></i> 仕事依頼</div>
                 <div class="card-body">
                     <a href="/retouchRequest"><i class="fas fa-plus"></i> 写真加工のご依頼はこちら</a>
-                    <table class="table table-striped table-hover table-sm">
+                    <table class="table table-hover table-sm">
                         <thead>
                             <tr>
                                 <th class="no_col">依頼No</th>
@@ -50,7 +50,9 @@
                                 <td>{{$item->due_date->format('Y/m/d')}}</td>
                                 <td>{{$item->status()}}</td>
                                 <td>
+                                    @if (Auth::user()->role->is_admin == true || $item->reception_date == null)
                                     <a href="/deal/edit?id={{$item->id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

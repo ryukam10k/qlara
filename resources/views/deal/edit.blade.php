@@ -77,6 +77,7 @@
                             <th>希望記入欄</th>
                             <td><textarea class="form-control" rows="4" name="memo">{{$form->memo}}</textarea></td>
                         </tr>
+                        @if (Auth::user()->role->is_admin == true)
                         <tr>
                             <th>写真枚数</th>
                             <td><input type="text" class="form-control" name="number" value="{{$form->number}}"></td>
@@ -85,7 +86,9 @@
                             <th>金額</th>
                             <td><input type="text" class="form-control" name="price" value="{{$form->price}}"></td>
                         </tr>
+                        @endif
                     </table>
+                    @if (Auth::user()->role->is_admin == true)
                     <table class="table table-sm">
                         <tr>
                             <th>納品物</th>
@@ -110,6 +113,11 @@
                             <td><input type="text" class="form-control datetimepick" name="end_date" value="{{$form->end_date}}" autocomplete="off"></td>
                         </tr>
                     </table>
+                    @else
+                        <input type="hidden" name="reception_date" value="{{$form->reception_date}}">
+                        <input type="hidden" name="delivery_date" value="{{$form->delivery_date}}">
+                        <input type="hidden" name="end_date" value="{{$form->end_date}}">
+                    @endif
                     <a href="javascript:history.back()">戻る</a>
                     <hr>
                     <div><input type="submit" class="btn btn-primary" value="保存"></div>

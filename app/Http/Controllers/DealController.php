@@ -68,6 +68,7 @@ class DealController extends Controller
         $form = $request->all();
         unset($form['_token']);
         unset($form['file']);
+        unset($form['created_at']);
         $deal->fill($form);
 
         if ($form['due_date'] != null) {

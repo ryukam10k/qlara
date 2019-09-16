@@ -18,6 +18,7 @@
         color: #fff;
         background-color: #3490dc;
     }
+
 </style>
 <div class="container">
     <div class="row justify-content-center">
@@ -47,7 +48,7 @@
                                 <td>{{$item->customer->name}}</td>
                                 <td>{{$item->requestUser->name}} 様</td>
                                 <td>{{$item->created_at->format('Y/m/d')}}</td>
-                                <td>{{$item->due_date->format('Y/m/d')}}</td>
+                                <td>{{$item->due_date()}}</td>
                                 <td>{{$item->status()}}</td>
                                 <td>
                                     @if (Auth::user()->role->is_admin == true || $item->reception_date == null)

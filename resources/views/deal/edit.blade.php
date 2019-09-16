@@ -47,6 +47,10 @@
                             <td>{{$form->id}}</td>
                         </tr>
                         <tr>
+                            <th>ステータス</th>
+                            <td>{{$form->status()}}</td>
+                        </tr>
+                        <tr>
                             <th>依頼内容</th>
                             <td>
                                 <select name="deal_category_id" id="dealCategories" class="form-control">
@@ -69,7 +73,7 @@
                             <th>納品希望日</th>
                             <td>
                                 <div>
-                                    <input type="text" class="form-control datepick" name="due_date" value="{{$form->due_date}}" autocomplete="off">
+                                    <input type="text" class="form-control datepick" name="due_date" value="{{$form->due_date()}}" autocomplete="off">
                                 </div>
                             </td>
                         </tr>
@@ -98,19 +102,19 @@
                     <table class="table table-light table-sm">
                         <tr>
                             <th>依頼日時</th>
-                            <td><input type="text" class="form-control" name="created_at" value="{{$form->created_at}}" readonly></td>
+                            <td><input type="text" class="form-control" name="created_at" value="{{$form->created_at()}}" readonly></td>
                         </tr>
                         <tr>
                             <th>受付日時</th>
-                            <td><input type="text" class="form-control datetimepick" name="reception_date" value="{{$form->reception_date}}" autocomplete="off"></td>
+                            <td><input type="text" class="form-control datetimepick" name="reception_date" value="{{$form->reception_date()}}" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <th>納品日時</th>
-                            <td><input type="text" class="form-control datetimepick" name="delivery_date" value="{{$form->delivery_date}}" autocomplete="off"></td>
+                            <td><input type="text" class="form-control datetimepick" name="delivery_date" value="{{$form->delivery_date()}}" autocomplete="off"></td>
                         </tr>
                         <tr>
                             <th>完了日時</th>
-                            <td><input type="text" class="form-control datetimepick" name="end_date" value="{{$form->end_date}}" autocomplete="off"></td>
+                            <td><input type="text" class="form-control datetimepick" name="end_date" value="{{$form->end_date()}}" autocomplete="off"></td>
                         </tr>
                     </table>
                     @else

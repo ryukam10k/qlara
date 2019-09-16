@@ -45,6 +45,10 @@
                         </div>
                         <table class="table table-sm">
                             <tr>
+                                <th>依頼No</th>
+                                <td>{{$form->id}}</td>
+                            </tr>
+                            <tr>
                                 <th>納品物</th>
                                 <td><input type="text" class="form-control" name="deliverable_uri" value="{{$form->deliverable_uri}}"></td>
                             </tr>
@@ -59,8 +63,8 @@
                         <div>[Dropbox]</div>
                         <ol>
                             <li>Dropboxを開く。</li>
-                            <li>年月（yyyyMM）フォルダを開く。（無かったら作成する）</li>
-                            <li>納品フォルダを作成する。（フォルダ名：依頼No）</li>
+                            <li>年月（yyyyMM形式）フォルダを開く。（無かったら作成する）</li>
+                            <li>納品フォルダを作成する。（フォルダ名：[依頼No]）</li>
                             <li>納品フォルダ内に納品物一式をアップロードする。</li>
                             <li>納品フォルダの共有リンクをコピーする。</li>
                         </ol>

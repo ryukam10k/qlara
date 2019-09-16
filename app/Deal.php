@@ -33,10 +33,42 @@ class Deal extends Model
         //'deleted_at'
     ];
 
+    // 依頼日時
+    public function created_at() {
+        if ($this->created_at != null) {
+            return $this->created_at->format('Y/m/d h:m');
+        }
+        return "";
+    }
+
+    // 納品希望日
+    public function due_date() {
+        if ($this->due_date != null) {
+            return $this->due_date->format('Y/m/d');
+        }
+        return "";
+    }
+
     // 受付日時
     public function reception_date() {
         if ($this->reception_date != null) {
             return $this->reception_date->format('Y/m/d h:m');
+        }
+        return "";
+    }
+
+    // 納品日時
+    public function delivery_date() {
+        if ($this->delivery_date != null) {
+            return $this->delivery_date->format('Y/m/d h:m');
+        }
+        return "";
+    }
+
+    // 完了日時
+    public function end_date() {
+        if ($this->end_date != null) {
+            return $this->end_date->format('Y/m/d h:m');
         }
         return "";
     }

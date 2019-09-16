@@ -38,6 +38,10 @@
                             <td>{{$form->id}}</td>
                         </tr>
                         <tr>
+                            <th>ステータス</th>
+                            <td>{{$form->status()}}</td>
+                        </tr>
+                        <tr>
                             <th>依頼内容</th>
                             <td>{{$form->dealCategory->name}}</td>
                         </tr>
@@ -47,7 +51,7 @@
                         </tr>
                         <tr>
                             <th>納品希望日</th>
-                            <td>{{$form->due_date}}</td>
+                            <td>{{$form->due_date()}}</td>
                         </tr>
                         <tr>
                             <th>希望記入欄</th>
@@ -75,19 +79,19 @@
                     <table class="table table-light table-sm">
                         <tr>
                             <th>依頼日時</th>
-                            <td>{{$form->created_at}}</td>
+                            <td>{{$form->created_at()}}</td>
                         </tr>
                         <tr>
                             <th>受付日時<small>（※作業開始日時）</small></th>
-                            <td>{{$form->reception_date}}</td>
+                            <td>{{$form->reception_date()}}</td>
                         </tr>
                         <tr>
                             <th>納品日時</th>
-                            <td>{{$form->delivery_date}}</td>
+                            <td>{{$form->delivery_date()}}</td>
                         </tr>
                         <tr>
                             <th>完了日時</th>
-                            <td>{{$form->end_date}}</td>
+                            <td>{{$form->end_date()}}</td>
                         </tr>
                     </table>
                     <a href="javascript:history.back()">戻る</a>
